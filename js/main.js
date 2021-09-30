@@ -20,5 +20,3 @@ searchInputEl.addEventListener('blur', function() {
 });
 
 // 오류 해결: remove를 안하고 blur를 하였더니 검색란이 blur되지 않았음
-
-

@@ -66,6 +66,7 @@ header .sub-menu ul.menu li::before {
   width: 1px;
   height: 12px;
   background-color: #e5e5e5;
+  
   /* positon: absolute를 통해 자동으로 display가 block으로 변함 */
   position: absolute;
   top: 0;
