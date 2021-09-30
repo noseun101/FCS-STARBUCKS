@@ -66,7 +66,7 @@ header .sub-menu ul.menu li::before {
   width: 1px;
   height: 12px;
   background-color: #e5e5e5;
-  
+
   /* positon: absolute를 통해 자동으로 display가 block으로 변함 */
   position: absolute;
   top: 0;
@@ -132,4 +132,33 @@ header .sub-menu .search .material-icons {
 header .sub-menu .search.focused .material-icons {
     /* 검색란을 펼쳤을 때 material-icons가 안보이게 한다. */
     opacity: 0;
+}
+
+header .main-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  /* 목록을 수평으로 나타냄 */
+  display: flex;
+}
+
+header .main-menu .item{
+
+}
+
+header .main-menu .item .item__name{
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+header .main-menu .item:hover .item__name{
+  background-color: #2c2a29;
+  color: #669900;
+  border-radius: 6px 6px 0 0;
+}
+
+header .main-menu .item .item__contents{
+  
 }
