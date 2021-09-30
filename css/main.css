@@ -1,0 +1,134 @@
+/* COMMON */
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+img {
+  /* img는 더이상 글자로 취급 x 
+     레이아웃 box로 취급 */
+  display: block;
+}
+
+/* 모든 <a>에 밑줄 제거 */
+a {
+  text-decoration: none;
+}
+/* header */
+header {
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+header .inner {
+  width: 1100px;
+  height: 120px;
+  margin: 0 auto;
+  /* background-color: orange; */
+  position: relative;
+}
+
+header .logo {
+  height: 75px;
+  /*  가운데 배치시 position 속성 사용 -> 부모 요소 속성 여부를 확인하자. */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /* 화면에서 보이지 않음 */
+  /* display: none; */
+}
+
+header .sub-menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  /* 수평으로 정렬 */
+  display: flex;
+}
+
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  /* 수직 요소를 수평요소로 정렬 */
+  display: flex;
+}
+
+header .sub-menu ul.menu li {
+  position: relative;
+}
+/* 가상 요소 선택자 */
+header .sub-menu ul.menu li::before {
+  content: ""; 
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  /* positon: absolute를 통해 자동으로 display가 block으로 변함 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+header .sub-menu ul.menu li:first-child::before {
+  /* 왼쪽 구분선 안보이게 함 */
+  display: none;
+}
+
+header .sub-menu ul.menu li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  /* <a>를 block요소로 사용함. */
+  display: block;
+  color: #656565;
+}
+
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+
+header .sub-menu .search {
+  height: 34px;
+  position: relative;
+}
+
+header .sub-menu .search input {
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  /* 주변 테두리 제거 */
+  outline: none;
+  background-color: #fff;
+  color: #777;
+}
+/* input 요소를 선택하면 검색란이 순간적으로 늘어남 */
+header .sub-menu .search input:focus {
+  width: 160px;
+  border-color: #669900;
+  /* 전환효과: transition */
+  font-size: 12px;
+  transition: width .4s;
+}
+
+/* 돋보기 아이콘 설정 */
+header .sub-menu .search .material-icons {
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  /* 검색란 자연스럽게 보이기 위한 효과 지정 */
+  transition: all .4s;
+}
+
+header .sub-menu .search.focused .material-icons {
+    /* 검색란을 펼쳤을 때 material-icons가 안보이게 한다. */
+    opacity: 0;
+}
