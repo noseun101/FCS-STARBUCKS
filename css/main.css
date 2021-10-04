@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   line-height: 1.4;
   color: #333;
+  height: 3000px;
 }
 a {
   text-decoration: none;
@@ -23,11 +24,14 @@ img {
 /* header */
 header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 9;
+  /* position: relative; */
   background-color: #F6F5F0;
   border-bottom: 1px solid #c8c8c8;
+  /* position: 
+   1.fixed와 absolute는 가로 너비의 최소한 줄어든다.
+   2. 스크롤을 내려도 헤더가 올라가지 않음.*/
+  position: fixed;
+  top: 0;
 }
 header > .inner {
   height: 120px;
@@ -170,4 +174,22 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
   color: #64a70b;
   margin: 4px 0 14px;
+}
+
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+
+header .badges  .badge{
+  border-radius: 10px;
+  /* 요소의 콘텐츠(이미지) 넘치지 않도록 
+    hidden으로 지정함*/
+  overflow: hidden;
+  margin-bottom: 12px;
+  /* .15 : 0 생략 가능함 */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, .15);
+  /* 지정한 요소에 마우스 올리면 모양이 변함.*/
+  cursor: pointer;
 }
