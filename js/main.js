@@ -45,3 +45,12 @@ window.addEventListener('scroll', _.throttle(function() {
   }
 }, 300));
 // _.throttle(함수, 시간(msec)) 추가. 
+// forEach: 반복적인 일을 수행할 때 능률 향상됨
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function (fadeEl, index) {
+  gsap.to(fadeEl, 1, {
+    // 각 요소가 반복할 때 0.7초뒤에 시작
+    delay: (index + 1) * .7,  // 0.7 -> 1.4 -> 2.1 -> 2.7초 마다 실행.
+    opacity: 1
+  });
+});
