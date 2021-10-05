@@ -298,7 +298,7 @@ header .badges  .badge{
 
 .visual  .cup1.text{
   position: absolute;
-  bottom: 38px;
+  top: 38px;
   right: 171px;
 }
 
@@ -310,7 +310,7 @@ header .badges  .badge{
 
 .visual .cup2.text{
   position: absolute;
-  bottom: 321px;
+  top: 321px;
   right: 416px;
 }
 
@@ -328,9 +328,6 @@ header .badges  .badge{
 
 
 /* NOTICE */
-.notice {
-
-}
 
 .notice .notice-line {
   position: relative;
@@ -432,4 +429,108 @@ header .badges  .badge{
 
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
+}
+
+.notice .promotion {
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+}
+
+.notice .promotion .swiper-container {
+  /* 가로 넓이 계산하는 함수 */
+  width: calc(819px * 3 + 20px);
+  /* width: calc(100% - 50px); */
+  height: 553px;
+  background-color: #ddd8d880;
+  text-align: center;
+  font-size: 200px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2);
+}
+
+.notice .promotion .swiper-slide {
+  opacity: .5;
+  /* 전환효과 */
+  transition: opacity 1s;
+  position: relative;
+}
+
+.notice .promotion .swiper-slide-active {
+  opacity: 1;
+}
+
+.notice .promotion .swiper-slide .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* 가로 넓이는 이미 지정했기에 지정 안해줘도 된다. */
+}
+
+/* 브라우저에서 이미 스타일 지정함 */
+.notice .promotion .swiper-pagination {
+  bottom: 40px;
+  left: 0;
+  right: 0;
+}
+
+/* Slide Bullet */
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  /* 투명색 지정 */
+  background-color: transparent;
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  /* 마지막 bullet은 여백이 필요없음.*/
+  margin-right: 0px;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+
+/* 다중 선택자로 이전 버튼, 다음 버튼 속성 부여*/
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  /* 요소의 쌓임 순서를 한 단계 올림*/
+  z-index: 1;
+  cursor: pointer;
+  /* 요소 주변에 테두리 제거*/
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 전환 효과 */
+  transition: .4s;
+}
+
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
 }

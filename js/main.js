@@ -66,3 +66,30 @@ new Swiper('.notice-line .swiper-container', {
   // 4번째 슬라이드 다음 1번째 슬라이드가 나타남
   loop: true
 });
+
+new Swiper('.promotion .swiper-container', {
+  // 수평 슬라이드 설정에서 horizontal은 기본값이기에 명시 x
+  // direction: 'horizontal',
+  // 한번에 보여줄 슬라이드 개수
+  slidesPerView: 3,
+  // 슬라이드 사이 여백
+  spaceBetween: 4, 
+  // 1번 슬라이드가 가운데 보이기
+  centeredSlides: true,
+  // 반복 재생 여부 설정
+  loop: true,
+  // autoplay: {
+  //   delay: 5000  // 0.5초 동안 delay
+  // }
+  pagination: {
+    // 페이지 번호 요소 선택자
+    el: '.promotion .swiper-pagination',  
+    // 사용자 페이지 번호 요소를 시각적 및 제어 가능
+    clickable: true 
+  }, 
+  navigation: {
+    prevEl: '.promotion .swiper-prev', // 이전 슬라이드 버튼
+    // CSS 속성으로 지정해줘야 뷰포트에 출력된다.
+    nextEl: '.promotion .swiper-next', // 이후 슬라이드 버튼
+  }
+});
