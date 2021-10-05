@@ -435,6 +435,14 @@ header .badges  .badge{
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  /* height가 .4초 만큼 크기가 작아짐 */
+  transition: height .4s;
+  overflow: hidden;
+}
+
+/* 프로모션 show / hide */
+.notice .promotion.hide {
+  height: 0;
 }
 
 .notice .promotion .swiper-container {

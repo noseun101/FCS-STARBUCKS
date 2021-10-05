@@ -93,3 +93,19 @@ new Swiper('.promotion .swiper-container', {
     nextEl: '.promotion .swiper-next', // 이후 슬라이드 버튼
   }
 });
+
+// promotionToggleBtn을 클릭 했을 때 열기 / 닫기
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
+promotionToggleBtn.addEventListener('click', function() {
+  // 변수 재할당
+  isHidePromotion = !isHidePromotion
+  if(isHidePromotion) {
+    // isHidePromotion == true -> hidden
+    promotionEl.classList.add('hide');
+  } else {
+    // isHidePromotion == false ->  show
+    promotionEl.classList.remove('hide');
+  }
+});
