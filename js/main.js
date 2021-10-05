@@ -54,3 +54,15 @@ fadeEls.forEach(function (fadeEl, index) {
     opacity: 1
   });
 });
+
+// Swiper Running Code
+// new Swiper(선택자 , 옵션)
+new Swiper('.notice-line .swiper-container', {
+  // 수직 슬라이드 설정
+  direction: 'vertical',
+  // 자동 재생 여부 설정
+  autoplay: true,
+  // 반복 재생 여부 설정
+  // 4번째 슬라이드 다음 1번째 슬라이드가 나타남
+  loop: true
+});
